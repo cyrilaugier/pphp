@@ -59,3 +59,46 @@ projet peut être présenté tel quel à Jean Forteroche. Cette étape sera suiv
 - Créer un site Internet, de sa conception à sa livraison
 - Insérer ou modifier les données d'une base
 - Organiser le code en langage PHP
+
+---
+
+## Bases de données
+
+Notes pour la gestion des bases de données :
+
+```
+# mariadb
+> CREATE DATABASE articles_database;
+> GRANT ALL ON articles_database.* TO 'cyril'@'localhost' IDENTIFIED BY 'password' WITH GRANT OPTION;
+> FLUSH PRIVILEGES;
+```
+
+```
+$ mariadb -u cyril -p (ou mariadb -p, puisque $USER=cyril)
+> SHOW DATABASES;
+```
+
+```
++--------------------+
+| Database           |
++--------------------+
+| articles_database  |
+| information_schema |
++--------------------+
+```
+
+Ensuite se connecter à Adminer avec l'utilisateur `cyril` pour créer la table `articles_table`, ou en SQL :
+- à remplir
+
+```
+INSERT INTO articles_database.articles_table (title,body) VALUES ("Le titre", "Ceci est un article");
+SELECT * FROM articles_database.articles_table;
+```
+
+```
++----+----------+---------------------+
+| id | title    | body                |
++----+----------+---------------------+
+|  1 | Le titre | Ceci est un article |
++----+----------+---------------------+
+```
