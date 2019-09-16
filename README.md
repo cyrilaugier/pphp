@@ -87,4 +87,18 @@ $ mariadb -u cyril -p (ou mariadb -p, puisque $USER=cyril)
 +--------------------+
 ```
 
-Ensuite se connecter à Adminer avec l'utilisateur `cyril`.
+Ensuite se connecter à Adminer avec l'utilisateur `cyril` pour créer la table `articles_table`, ou en SQL :
+- à remplir
+
+```
+INSERT INTO articles_database.articles_table (title,body) VALUES ("Le titre", "Ceci est un article");
+SELECT * FROM articles_database.articles_table;
+```
+
+```
++----+----------+---------------------+
+| id | title    | body                |
++----+----------+---------------------+
+|  1 | Le titre | Ceci est un article |
++----+----------+---------------------+
+```
