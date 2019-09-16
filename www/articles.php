@@ -16,4 +16,6 @@ while($value = $response->fetch()) {
 	echo '<h2>' . $value['title'] . '</h2>';
 	echo '<div>' . $value['body'] . '</div>';
 	echo '</article>';
+	echo '<button>Supprimer l\'article</button>';
+
 }
