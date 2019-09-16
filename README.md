@@ -88,11 +88,16 @@ $ mariadb -u cyril -p (ou mariadb -p, puisque $USER=cyril)
 ```
 
 Ensuite se connecter à Adminer avec l'utilisateur `cyril` pour créer la table `articles_table`, ou en SQL :
-- à remplir
+```
+$ mariadb -p
+> CREATE TABLE articles_table.articles_database (id INT AUTO_INCREMENT, title VARCHAR(255), body TEXT);
+```
+**TODO :** Résoudre le problème de droits en cli.
 
 ```
-INSERT INTO articles_database.articles_table (title,body) VALUES ("Le titre", "Ceci est un article");
-SELECT * FROM articles_database.articles_table;
+$ mariadb -p
+> INSERT INTO articles_database.articles_table (title,body) VALUES ("Le titre", "Ceci est un article");
+> SELECT * FROM articles_database.articles_table;
 ```
 
 ```
