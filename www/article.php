@@ -9,8 +9,11 @@ try {
 	die('Erreur : ' . $e->getMessage());
 }
 
-$response = $bdd->query('SELECT title, body FROM articles_table WHERE id=1');
-$response = $response->fetch();
+$response = $bdd->query('SELECT title, body FROM articles_table ORDER by id');
 
-echo '<h1>' . $response['title'] . '</h1>';
-echo '<div>' . $response['body'] . '</div>';
+while($value = $response->fetch()) {
+	echo '<article>';
+	echo '<h2>' . $value['title'] . '</h2>';
+	echo '<div>' . $value['body'] . '</div>';
+	echo '</article>';
+}
