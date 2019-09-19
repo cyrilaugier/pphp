@@ -11,6 +11,9 @@ try {
 
 $response = $bdd->query('SELECT * FROM articles_table ORDER by id');
 
+// TODO:
+// 1. Ajouter un bouton qui redirige vers new.php
+
 while($value = $response->fetch()) {
 	echo '<article>';
 	echo '<h2><a href="show.php?id=' . $value['id'] . '">' . $value['title'] . '</a></h2>';
