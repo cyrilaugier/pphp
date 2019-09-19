@@ -11,5 +11,5 @@ try {
 
 $response = $bdd->query('DELETE FROM articles_table WHERE id=' . $_GET['id']);
 
-header('Location: articles.php');
+header('Location: list.php');
 exit;
