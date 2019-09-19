@@ -9,13 +9,21 @@ try {
 	die('Erreur : ' . $e->getMessage());
 }
 
-$response = $bdd->query('SELECT * FROM articles_table ORDER by id');
+$req = $bdd->prepare('SELECT * FROM articles_table WHERE id=' . $_GET['id']);
+$req->execute();
 
-while($value = $response->fetch()) {
+// while($value = $response->fetch()) {
+// 	echo '<article>';
+// 	echo '<h2><a href="article.php?id=' . $value['id'] . '">' . $value['title'] . '</a></h2>';
+// 	echo '<div>' . $value['body'] . '</div>';
+// 	echo '</article>';
+// }
+
+$value = $req->fetch(PDO::FETCH_ASSOC);
+var_dump($value);
+
+
 	echo '<article>';
 	echo '<h2><a href="article.php?id=' . $value['id'] . '">' . $value['title'] . '</a></h2>';
 	echo '<div>' . $value['body'] . '</div>';
 	echo '</article>';
-	echo '<button>Supprimer l\'article</button>';
-
-}
