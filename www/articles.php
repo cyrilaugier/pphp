@@ -9,13 +9,12 @@ try {
 	die('Erreur : ' . $e->getMessage());
 }
 
-$response = $bdd->query('SELECT title, body FROM articles_table ORDER by id');
+$response = $bdd->query('SELECT * FROM articles_table ORDER by id');
 
 while($value = $response->fetch()) {
 	echo '<article>';
 	echo '<h2>' . $value['title'] . '</h2>';
 	echo '<div>' . $value['body'] . '</div>';
 	echo '</article>';
-	echo '<button>Supprimer l\'article</button>';
-
+	echo '<a href="delete.php?id=' . $value['id'] . '"><button>Supprimer l\'article</button></a>';
 }
