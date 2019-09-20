@@ -1,8 +1,5 @@
 <?php
 
-// TODO:
-// 4. Rediriger vers list.php
-
 $user = 'cyril';
 $passwd = 'password';
 
@@ -19,3 +16,6 @@ if (isset($_POST['title']) && isset($_POST['body'])) {
 		'body' => $_POST['body']
 	));
 }
+
+header('Location: list.php');
+exit;
