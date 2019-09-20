@@ -1,7 +1,6 @@
 <?php
 
 // TODO:
-// 3. Insérer les données dans la bdd
 // 4. Rediriger vers list.php
 
 $user = 'cyril';
@@ -14,5 +13,9 @@ try {
 }
 
 if (isset($_POST['title']) && isset($_POST['body'])) {
-	$bdd->exec('INSERT INTO articles_database.articles_table(title,body) VALUEs(\'titre\', \'corps\')');
+	$req = $bdd->prepare('INSERT INTO articles_table(title,body) VALUES(:title, :body)');
+	$req->execute(array(
+		'title' => $_POST['title'],
+		'body' => $_POST['body']
+	));
 }
