@@ -92,7 +92,6 @@ Ensuite se connecter à Adminer avec l'utilisateur `cyril` pour créer la table 
 $ mariadb -p
 > CREATE TABLE articles_table.articles_database (id INT AUTO_INCREMENT, title VARCHAR(255), body TEXT);
 ```
-**TODO :** Résoudre le problème de droits en cli.
 
 ```
 $ mariadb -p
