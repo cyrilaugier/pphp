@@ -14,6 +14,5 @@ try {
 }
 
 if (isset($_POST['title']) && isset($_POST['body'])) {
-	echo '<h2>' . $_POST['title'] . '</h2>';
-	echo '<p>' . $_POST['body'] . '</p>';
+	$bdd->exec('INSERT INTO articles_database.articles_table(title,body) VALUEs(\'titre\', \'corps\')');
 }
